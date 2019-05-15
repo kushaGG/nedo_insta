@@ -6,12 +6,12 @@ class User < ApplicationRecord
          authentication_keys: [:login]
 
   has_many :photos, dependent: :destroy
-  # has_many :relationships, foreign_key: "follower_id", dependent: :destroy
-  # has_many :followed_users, through: :relationships, source: :followed
-  # has_many :reverse_relationships, foreign_key: "followed_id",
-  #                                  class_name: "Relationship",
-  #                                  dependent: :destroy
-  # has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name: "Relationship",
+                                   dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
 
   validates :nickname, presence: true, length: 5..15, uniqueness: true, format: { without: /[!-\/\@\^\~\`\(\)\[\]\>\<\=]/ }
 
@@ -29,18 +29,18 @@ class User < ApplicationRecord
     where(conditions).where(["lower(nickname) = :value OR lower(email) = :value", {value: login.strip.downcase}]).first
   end
 
-  # def feed
-  #   r = Relationship.arel_table
-  #   t = Tweet.arel_table
-  #   sub_query = t[:user_id].in(r.where(r[:follower_id].eq(id)).project(r[:followed_id]))
-  #   Tweet.where(sub_query.or(t[:user_id].eq(id)))
-  # end
-  #
-  # def following?(other_user)
-  #   relationships.find_by(followed_id: other_user.id)
-  # end
-  #
-  # def follow!(other_user)
-  #   relationships.create!(followed_id: other_user.id)
-  # end
+  def feed
+    r = Relationship.arel_table
+    t = Tweet.arel_table
+    sub_query = t[:user_id].in(r.where(r[:follower_id].eq(id)).project(r[:followed_id]))
+    Tweet.where(sub_query.or(t[:user_id].eq(id)))
+  end
+
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
 end

@@ -4,6 +4,7 @@ class PhotosController < ApplicationController
 
   def index
     @photo = Photo.new
+    
   end
 
   def new
@@ -11,7 +12,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    #code
+    @photo = current_user.photos.build(photo_params)
+    if @photo.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -23,11 +29,16 @@ class PhotosController < ApplicationController
   end
 
   def update
-    #code
+    if @photo.update(photo_params)
+      redirect_to photo_path(@photo.id)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    #code
+    @twitt.destroy
+    redirect_to root_path
   end
 
   private

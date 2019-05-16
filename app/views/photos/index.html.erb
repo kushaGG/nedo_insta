@@ -1,8 +1,14 @@
-<%= link_to "New photo", new_photo_path %>
+<body class="bodyindex">
+  <div class="content">
 <% @photos.each do |photo| %>
-  <strong>Photos: </strong><br>
+  <div class="textcontent">
+    <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
+    <strong><%= photo.user.nickname %></strong><br>
+  </div>
   <% photo.photos.each do | image | %>
-    <%= image_tag(image.url, size: "500x300")%>	<br> <br>
+    <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
   <% end %>
   <br>
 <% end %>
+  </div>
+</body>

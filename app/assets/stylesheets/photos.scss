@@ -1,3 +1,29 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bodyindex{
+  background: #FAFAFA;
+  .content{
+    margin-top: 60px;
+    margin-left: 11%;
+    width: 51%;
+    background: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    .textcontent{
+      width: 100%;
+      background: white;
+      display: inline-block;
+    .useravatar{
+      margin-left: 2%;
+      margin-top: 10px;
+      border-radius: 50%;
+    }
+    }
+  }
+  .photocontent{
+    width: 100%;
+    height: auto;
+  }
+}

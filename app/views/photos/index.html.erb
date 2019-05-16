@@ -1,0 +1,8 @@
+<%= link_to "New photo", new_photo_path %>
+<% @photos.each do |photo| %>
+  <strong>Photos: </strong><br>
+  <% photo.photos.each do | image | %>
+    <%= image_tag(image.url, size: "500x300")%>	<br> <br>
+  <% end %>
+  <br>
+<% end %>

@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
   def index
     @photo = Photo.new
     @user = User.find_by(id: params[:id])
+    @photos = Photo.all
   end
 
   def new
@@ -14,8 +15,10 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.build(photo_params)
     if @photo.save
+      flash[:notice] = "photo successfully created"
       redirect_to root_path
     else
+      flash[:error] = "photo has error with created"
       render 'new'
     end
   end

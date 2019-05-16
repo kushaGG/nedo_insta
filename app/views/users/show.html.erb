@@ -1,4 +1,6 @@
 <h1>Profile</h1>
-<p><strong>Tweeets: </strong> <%= link_to @user.photos.count, user_path(@user.id) %></p>
+<p><strong>Name: </strong> <%=  @user.nickname %></p>
+<p><strong>Name: </strong> <%=  image_tag(@user.avatar_url) if @user.avatar? %></p>
+<p><strong>Photo: </strong> <%=  @user.photos.count %></p>
 <p><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p>
 <p><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>

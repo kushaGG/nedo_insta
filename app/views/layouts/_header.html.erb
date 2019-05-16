@@ -1,0 +1,25 @@
+<header class="header">
+<div class="logolink">
+  <%= link_to root_path do %>
+  <i class="fab fa-instagram fa-2x" style="color:black;"><font class="textlogo"> | </font><%= image_tag("logo/nedo-instagram.png", size:"120x35") %></i>
+  <% end %>
+</div>
+<% if user_signed_in? %>
+<div class="profilelink">
+<%=  link_to user_path(current_user.id) do %>
+<i class="fa fa-user fa-2x"style="color:black;"></i>
+<% end %>
+  </div>
+<div class="deviselink">
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fa fa-sign-out-alt fa-2x"style="color:black;"></i>
+  <% end %>
+  </div>
+<% else %>
+<div class="deviselink">
+  <%= link_to new_user_session_path do %>
+  <i class="fa fa-sign-in-alt fa-2x" style="color:black;"></i>
+  <% end %>
+</div>
+<% end %>
+</header>

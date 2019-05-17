@@ -4,3 +4,4 @@
 <p><strong>Photo: </strong> <%=  @user.photos.count %></p>
 <p><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p>
 <p><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>
+<%= link_to "Edit", edit_user_registration_path%>

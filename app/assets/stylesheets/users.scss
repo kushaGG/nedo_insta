@@ -1,3 +1,143 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//LOGIN
+.devisebody{
+  background: #FAFAFA;
+  .logodevise{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .deviselogin{
+    background: white;
+    height: 350px;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    .formlogin{
+      width: 80%;
+      height: 40px;
+      margin-bottom: 10px;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      padding-left: 2%;
+      background: #FAFAFA;
+    }
+    .checklogin{
+
+    }
+    .buttonlogin{
+      width: 80%;
+      height: 40px;
+      background: #C3E0FB;
+      color: white;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+    }
+    hr{
+      width: 80%;
+    }
+  }
+}
+.underdeviselogin{
+  background: white;
+  height: 50px;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  padding-top: 10px;
+}
+
+//REGISTRATION
+.deviseregistration{
+  background: white;
+  height: 450px;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  .formregistration{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    padding-left: 2%;
+    background: #FAFAFA;
+  }
+  .buttonregistration{
+    width: 80%;
+    height: 40px;
+    background: #C3E0FB;
+    color: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+  }
+}
+
+//EDIT
+.deviseedit{
+  background: white;
+  height: auto;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  padding-top: 3%;
+  padding-right: 10%;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  .formedit{
+    display: inline-block;
+    aside{
+      font-weight: bold;
+      display: inline-block;
+      padding-right: 10px;
+    }
+  }
+  .infouseredit{
+    padding-right: 18.5%;
+    strong{
+      margin-left: 2%;
+    }
+  }
+  .useravataredit{
+    border-radius: 50%;
+  }
+  .allformedit{
+    margin-top: 3%;
+    margin-right: 23%;
+    text-align: end;
+  }
+  .editfield{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    padding-left: 2%;
+    background: #FAFAFA;
+  }
+  .buttonedit{
+    margin-left: 28%;
+    margin-right: 5%;
+    width: 200px;
+    height: 40px;
+    background: #C3E0FB;
+    color: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    margin-bottom: 5%;
+  }
+}

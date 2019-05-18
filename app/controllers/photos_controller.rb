@@ -3,9 +3,12 @@ class PhotosController < ApplicationController
   before_action :find_photo, only:[:show, :edit, :update, :destroy]
 
   def index
-    @photo = Photo.new
     @user = User.find_by(id: params[:id])
+    if user_signed_in?
+      @mainphotos = current_user.feed.paginate(page: params[:page])
+    end
     @photos = Photo.all
+
   end
 
   def new
@@ -40,7 +43,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @twitt.destroy
+    @photo.destroy
     redirect_to root_path
   end
 

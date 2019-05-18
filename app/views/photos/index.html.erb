@@ -1,14 +1,41 @@
 <body class="bodyindex">
   <div class="content">
-<% @photos.each do |photo| %>
-  <div class="textcontent">
-    <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
-    <strong><%= photo.user.nickname %></strong><br>
-  </div>
-  <% photo.photos.each do | image | %>
-    <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
+
+<% if user_signed_in? %>
+  <% @mainphotos.each do |photo| %>
+    <div class="textcontent">
+      <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
+      <strong><%= photo.user.nickname %></strong><br>
+    </div>
+    <% photo.photos.each do | image | %>
+      <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
+    <% end %>
+    <br>
+    <% pre_like = photo.likes.find{ |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', photo_like_path(photo, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', photo_likes_path(photo), method: :post %>
+    <% end %>
+    <p><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <%= render 'comment_list', {photo: photo} %>
+    <%= render 'comment_form', {photo: photo}%>
   <% end %>
-  <br>
+
+
+<% else %>
+
+  <% @photos.each do |photo| %>
+    <div class="textcontent">
+      <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
+      <strong><%= photo.user.nickname %></strong><br>
+    </div>
+    <% photo.photos.each do | image | %>
+      <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
+    <% end %>
+    <p><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <% end %>
 <% end %>
+
   </div>
 </body>

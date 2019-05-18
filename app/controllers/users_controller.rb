@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user,       only: [:show, :edit, :update, :destroy, :following, :followers]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
 
 def index
-  @users = User.all
+  @users = User.search(params[:term])
+    respond_to :js
 end
 
 def show
   @photo = Photo.new
-  @photos = @user.photos.paginate(page: params[:page])
+  id = User.find_by(id: params[:id])
+  @currentphoto = Photo.where(user_id: id).order("created_at DESC")
 end
 
 def following

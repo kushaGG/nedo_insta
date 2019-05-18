@@ -1,7 +1,18 @@
 <h1>Profile</h1>
 <p><strong>Name: </strong> <%=  @user.nickname %></p>
-<p><strong>Name: </strong> <%=  image_tag(@user.avatar_url) if @user.avatar? %></p>
+<p><%=image_tag(@user.avatar_url) %></p>
 <p><strong>Photo: </strong> <%=  @user.photos.count %></p>
 <p><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p>
 <p><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>
+<% if current_user.following?(@user) %>
+    <%= render 'unfollow' %>
+  <% else %>
+    <%= render 'follow' %>
+  <% end %>
 <%= link_to "Edit", edit_user_registration_path%>
+
+<% @currentphoto.each do |user| %>
+<% user.photos.each do | photo | %>
+		<%= image_tag(photo.url, size: "500x300")%>	<br> <br>
+	<% end %>
+<% end %>

@@ -9,6 +9,13 @@
   <%= link_to new_photo_path  do%>
   <i class="fas fa-camera fa-2x" style="color:black;"></i>
   <% end %>
+
+  <%= form_tag users_path, method: :get, class: "form-inline my-2 my-lg-0 ml-md-auto", id: "users-search",
+        remote: true do %>
+        <%= text_field_tag :term, params[:term], class: "form-control mr-sm-2 text-center common-btn",
+          placeholder: "Search", autocomplete: "off" %>
+        <div id="users-result"></div>
+      <% end %>
 </div>
 <div class="profilelink">
 <%=  link_to user_path(current_user.id) do %>

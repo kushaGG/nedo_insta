@@ -1,0 +1,6 @@
+<%= form_for [photo, Comment.new], :html => {:class => "w-100"}, remote: true do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :photo_id, value: photo.id %>
+  <%= f.text_field :content, class: "form-control comment-input border-0",
+     placeholder: "Add a comment ...", autocomplete: :off %>
+<% end %>

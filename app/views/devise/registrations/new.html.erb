@@ -4,7 +4,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
     <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "nickname", class: "formregistration" %>
-    <%= f.file_field :avatar, style: "padding-top: 4px;", class: "formregistration"  %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "formregistration" %>
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "password (6 characters minimum)", class: "formregistration" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password", class: "formregistration" %>

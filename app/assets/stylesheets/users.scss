@@ -141,3 +141,31 @@
     margin-bottom: 5%;
   }
 }
+//SHOW
+.bodyshow{
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  .statshow{
+    display: inline-block;
+    .nicknameandedit{
+      padding-left: 20%;
+      display: inline-block;
+      .linkedit{
+      display: inline-block;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      padding: 1%;
+      .link{
+        color: black;
+        text-decoration: none;
+      }
+      }
+    }
+  }
+.useravatar{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+}

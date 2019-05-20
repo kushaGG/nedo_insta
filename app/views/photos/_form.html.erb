@@ -1,15 +1,5 @@
 <%= form_with(model: photo, local: true) do |form| %>
-
-  <div class="field">
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.file_field :photos, multiple: true %>
-  </div>
-
-
-  <div class="actions">
-    <button type="submit" class="btn btn-secondary">Submit</button>
-  </div>
+    <%= form.file_field :photos, multiple: true, class: "uploadnew" %><br />
+    <%= form.text_field :description, placeholder: "Description", class: "formnew" %><br />
+    <%= form.submit "Upload the Image", class: "buttonnew"%>
 <% end %>

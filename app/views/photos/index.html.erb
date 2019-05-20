@@ -1,31 +1,51 @@
 <body class="bodyindex">
-  <div class="content">
-
 <% if user_signed_in? %>
   <% @mainphotos.each do |photo| %>
+  <div class="content">
     <div class="textcontent">
       <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
       <strong><%= photo.user.nickname %></strong><br>
     </div>
     <% photo.photos.each do | image | %>
-      <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
+      <%= image_tag(image.url, size: "400x250", class:"photocontent")%>
     <% end %>
     <br>
     <% pre_like = photo.likes.find{ |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= button_to 'Unlike', photo_like_path(photo, pre_like), method: :delete %>
-    <% else %>
-      <%= button_to 'Like', photo_likes_path(photo), method: :post %>
-    <% end %>
-    <p><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-    <%= render 'comment_list', {photo: photo} %>
-    <%= render 'comment_form', {photo: photo}%>
-  <% end %>
 
+      <%= button_to photo_like_path(photo, pre_like), method: :delete, class: "buttonlike" do %>
+        <i class="fas fa-heart fa-2x" style="color: red;"></i>
+      <% end %>
+    <% else %>
+      <%= button_to photo_likes_path(photo), method: :post, class: "buttonlike" do %>
+        <i class="fas fa-heart fa-2x" style="color: silver;"></i>
+      <% end %>
+    <% end %>
+    <b style="margin-left: 5px;"><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></b><br />
+    <b class="description"><%= photo.user.nickname %> </b><%= photo.description %>
+    <%= render 'comment_list', {photo: photo} %>
+    <hr />
+    <div class="formcomment">
+    <%= render 'comment_form', {photo: photo}%>
+    </div>
+    </div>
+  <% end %>
+  <div class="infouserindex">
+    <%= image_tag(current_user.avatar_url, class: "useravatarinfo")%>
+    <b><%= current_user.nickname %></b>
+  </div>
+  <div class="underinfoindex">
+    <% @users.each do |user| %>
+    <%= link_to user_path(user), class: "linktouser" do %>
+    <%= image_tag(user.avatar_url, size: "50x50", style: "border-radius: 50%;")%>
+    <%= user.nickname %><br />
+    <% end %>
+    <% end %>
+  </div>
 
 <% else %>
-
   <% @photos.each do |photo| %>
+  <div class="textcontent">
     <div class="textcontent">
       <i> <%= image_tag(photo.user.avatar_url, size:"50x50", class:"useravatar") %></i>
       <strong><%= photo.user.nickname %></strong><br>
@@ -33,9 +53,10 @@
     <% photo.photos.each do | image | %>
       <%= image_tag(image.url, size: "400x250", class:"photocontent")%>	<br> <br>
     <% end %>
-    <p><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <b><%= photo.likes.count %> <%= (photo.likes.count) == 1 ? 'Like' : 'Likes'%></b>
+    <b class="description"><%= photo.user.nickname %> </b><%= photo.description %>
+    <hr />
   <% end %>
-<% end %>
-
   </div>
+<% end %>
 </body>

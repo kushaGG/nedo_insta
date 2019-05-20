@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
       @mainphotos = current_user.feed.paginate(page: params[:page])
     end
     @photos = Photo.all
-
+    @users = User.all
   end
 
   def new

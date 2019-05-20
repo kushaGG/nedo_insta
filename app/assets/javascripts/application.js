@@ -16,4 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require dropzone
 //= require_tree .
+
+$("#users-result").html('<%= j render "users_result", {users: @users}

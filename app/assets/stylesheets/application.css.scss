@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require dropzone/dropzone
  */
  @import "bootstrap";
  @import "font-awesome-sprockets";
@@ -33,11 +34,17 @@
     ///
     }
   }
+  .search{
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    left: 39%;
+  }
   .addphoto{
     position: fixed;
     z-index: 1000;
     top: 20px;
-    left: 50%;
+    right: 15%;
   }
   .profilelink{
     position: fixed;
@@ -54,4 +61,10 @@
 }
 .body{
   padding-top: 70px;
+}
+.pacifico{
+  font-family: 'Pacifico', Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 26.4px;
+  color: #2b2b2b;
 }

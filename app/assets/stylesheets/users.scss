@@ -34,7 +34,7 @@
     .buttonlogin{
       width: 80%;
       height: 40px;
-      background: #C3E0FB;
+      background: #3391E5;
       color: white;
       border: 1px solid #E6E6E6;
       border-radius: 4px;
@@ -59,7 +59,7 @@
 //REGISTRATION
 .deviseregistration{
   background: white;
-  height: 450px;
+  height: 380px;
   text-align: center;
   margin-top: 5%;
   margin-left: 35%;
@@ -78,7 +78,7 @@
   .buttonregistration{
     width: 80%;
     height: 40px;
-    background: #C3E0FB;
+    background: #3391E5;
     color: white;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
@@ -134,7 +134,7 @@
     margin-right: 5%;
     width: 200px;
     height: 40px;
-    background: #C3E0FB;
+    background: #3391E5;
     color: white;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
@@ -144,12 +144,13 @@
 //SHOW
 .bodyshow{
   margin-top: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 7%;
+  margin-right: 7%;
   .statshow{
-    display: inline-block;
+    width: 100%;
+    display: inline;
     .nicknameandedit{
-      padding-left: 20%;
+      padding-left: 10%;
       display: inline-block;
       .linkedit{
       display: inline-block;
@@ -167,5 +168,72 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  margin-left: 60px;
 }
+}
+.hrshow{
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 9%;
+}
+.bodyphotoshow{
+  margin-top: 5%;
+  margin-left: 11%;
+  margin-right: 8%;
+  .photousershow{
+    margin-right: 2%;
+    margin-bottom: 2.5%;
+  }
+}
+
+//PASSWORD NEW
+.devisepasswordnew{
+  background: white;
+  height: 250px;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  .formnewpassword{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    padding-left: 2%;
+    background: #FAFAFA;
+  }
+  .buttonnewpassword{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 80%;
+    height: 40px;
+    background: #3391E5;
+    color: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    margin-bottom: 5%;
+  }
+}
+.underdevisenewpassword{
+  background: white;
+  height: 50px;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  padding-top: 10px;
+}
+//FOLLOW BUTTON
+.followunfollow{
+  width: 90px;
+  height: 40px;
+  color: white;
+  background: #3391E5;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
 }

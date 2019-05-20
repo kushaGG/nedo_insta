@@ -17,5 +17,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:likes).dependent(:destroy)}
     it { should have_many(:comments).dependent(:destroy)}
     it { should have_many(:relationships).dependent(:destroy)}
+    it { should have_many(:followed_users).through(:relationships).source(:followed)}
+    it { should have_many(:reverse_relationships).dependent(:destroy)}
+    it { should have_many(:followers).through(:reverse_relationships).source(:follower)}
   end
 end

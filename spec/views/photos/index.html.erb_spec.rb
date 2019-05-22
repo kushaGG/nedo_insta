@@ -2,7 +2,7 @@
 #
 # RSpec.describe "photos/index", type: :view do
 #   let!(:user) {create(:user)}
-#   let!(:profile) {create(:profile, user: user)}
+#   let!(:photo) {create(:photo, user: user)}
 #
 #
 #   before :each do

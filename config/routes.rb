@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :photos do
+  resources :photos, shallow: true do 
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:index, :create, :destroy],  shallow: true
   end

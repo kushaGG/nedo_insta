@@ -1,0 +1,10 @@
+
+<body class="devisebody">
+<div class="addnewphoto">
+  <% @photo.photos.each do | image | %>
+    <%= image_tag(image.url, size: "400x250", class:"photocontent")%>
+  <% end %>
+<%= render 'form', photo: @photo %>
+
+</div>
+</body>

@@ -1,0 +1,9 @@
+  <h3><%= @title %></h3>
+  <% if @users != current_user %>
+  <% if @users.any? %>
+    <ul>
+      <%= render @users %>
+    </ul>
+    <%= will_paginate %>
+  <% end %>
+<% end %>

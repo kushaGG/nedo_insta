@@ -29,6 +29,7 @@
     height: auto;
   }
 }
+
 .buttonlike{
   margin-top: 3px;
   background: none;
@@ -62,6 +63,11 @@
     height: 60px;
     border-radius: 50%;
   }
+  .linktouser{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
 }
 .underinfoindex{
   position: fixed;
@@ -77,6 +83,10 @@
     color: black;
     font-weight: bold;
   }
+}
+.maincontent{
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 //ADD NEW PHOTO

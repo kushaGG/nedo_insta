@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    #code
+    @photo = Photo.find(params[:id])
   end
 
   def edit
@@ -43,9 +43,12 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @photo.destroy
+    if @photo.present?
+      @photo.destroy
+    end
     redirect_to root_path
   end
+
 
   private
   def photo_params
@@ -53,6 +56,6 @@ class PhotosController < ApplicationController
   end
 
   def find_photo
-    @photo = Photo.find_by(id: params[:id])
+    @photo = Photo.find(params[:id])
   end
 end

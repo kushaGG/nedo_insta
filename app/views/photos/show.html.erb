@@ -1,3 +1,10 @@
 <% @photo.photos.each do | photo | %>
 		<%= image_tag(photo.url, size: "500x300")%>	<br> <br>
+
+	<% end %>
+	<%= link_to "Delete", photo_path(@photo.id), method: :delete %>
+	<%= link_to edit_photo_path(@photo.id) do %>
+	<p>
+	  Edit
+	</p>
 	<% end %>

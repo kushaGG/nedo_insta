@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :photos do
-    resources :likes, only: [:create, :destroy]
+    resources :likes
     resources :comments, only: [:index, :create, :destroy],  shallow: true
   end
 

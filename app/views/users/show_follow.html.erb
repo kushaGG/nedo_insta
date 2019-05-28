@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <div class="col-md-8">
@@ -11,3 +12,14 @@
     <%= will_paginate %>
   <% end %>
 </div>
+=======
+  <h3><%= @title %></h3>
+  <% if @users != current_user %>
+  <% if @users.any? %>
+    <ul>
+      <%= render @users %>
+    </ul>
+    <%= will_paginate %>
+  <% end %>
+<% end %>
+>>>>>>> 93295b5fc6c79ca12960062a392a190bb7663922

@@ -13,8 +13,8 @@ end
 
 describe 'POST #create' do
   it "Так як не можу создати фотку то не редіректить" do
-    #photos :create, params: {photo: {photos:"Tester.jpg"}}
-    #expect(subject.current_user.photo.photos).to eq("Tester.jpg")
+    # post :create, params: {photo: {photos:"Tester.jpg"}}
+    # expect(subject.current_user.photos[0]).to eq("Tester.jpg")
     expect(response).to_not redirect_to root_path
   end
 end

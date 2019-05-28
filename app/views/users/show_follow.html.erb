@@ -1,0 +1,13 @@
+
+
+<div class="col-md-8">
+  <h3><%= @title %></h3>
+  <% if @users.any? %>
+    <ul class="users follow">
+
+ <%= image_tag(@user.avatar_url)  %> <br>
+<strong>@<%= @user.nickname%></strong>
+    </ul>
+    <%= will_paginate %>
+  <% end %>
+</div>

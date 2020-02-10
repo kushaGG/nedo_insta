@@ -153,10 +153,10 @@
       padding-left: 10%;
       display: inline-block;
       .linkedit{
-      display: inline-block;
+      //display: inline-flex;
       border: 1px solid #E6E6E6;
       border-radius: 4px;
-      padding: 1%;
+      padding: 6px;
       .link{
         color: black;
         text-decoration: none;
@@ -177,10 +177,16 @@
   margin-right: 9%;
 }
 .bodyphotoshow{
-  margin-top: 5%;
-  margin-left: 11%;
-  margin-right: 8%;
+  //margin-top: 5%;
+  //margin-left: 11%;
+  //margin-right: 8%;
+  //display: flex;
+  //justify-content: center;
+  //flex-direction: row;
+  display: block;
   .photousershow{
+    height: 292px;
+    width: 292px;
     margin-right: 2%;
     margin-bottom: 2.5%;
   }

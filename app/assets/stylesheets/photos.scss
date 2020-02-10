@@ -4,22 +4,34 @@
 
 .bodyindex{
   background: #FAFAFA;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  .bodyindexsecond{
+
+  }
   .content{
+    position: relative;
+    float: left;
     margin-bottom: 20px;
     margin-top: 60px;
-    margin-left: 11%;
-    width: 51%;
+    width: 65%;
+    //max-width: 975px;
     background: white;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
     .textcontent{
       width: 100%;
+      max-width: 100%;
       background: white;
-      display: inline-block;
+      display: flex;
     .useravatar{
       margin-left: 2%;
-      margin-top: 10px;
+      margin: 10px 0 0 10px;
       border-radius: 50%;
+      max-width: 100%;
     }
     }
   }
@@ -53,11 +65,17 @@
   color: silver;
 
 }
-
+.infous{
+  position: absolute;
+  float: right;
+  top: 130px;
+  right: 0%;
+  width: 295px;
+  max-width: 100%;
+}
 .infouserindex{
-    position: fixed;
-    top: 130px;
-    right: 25%;
+    position: relative;
+    top: 0px;
   .useravatarinfo{
     width: 60px;
     height: 60px;
@@ -70,10 +88,8 @@
   }
 }
 .underinfoindex{
-  position: fixed;
-  top: 210px;
-  right: 11%;
-  width: 295px;
+  position: relative;
+  top: 30px;
   background: white;
   border: 1px solid #E6E6E6;
   border-radius: 4px;
@@ -85,8 +101,24 @@
   }
 }
 .maincontent{
-  margin-left: 15%;
-  margin-right: 15%;
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+    background: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    .textcontent{
+      width: 100%;
+      background: white;
+      display: inline-block;
+    .useravatar{
+      margin-left: 2%;
+      margin-top: 10px;
+      border-radius: 50%;
+    }
+  }
 }
 
 //ADD NEW PHOTO
@@ -133,4 +165,59 @@
   border: 1px solid #E6E6E6;
   border-radius: 4px;
   margin-bottom: 5%;
+}
+
+@media only screen and (min-width: 220px) and (max-width: 980px) {
+  .bodyindexsecond{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content{
+    width: 82%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .infous{
+    display: none;
+
+  }
+}
+@media only screen and (max-width: 650px){
+  .bodyindexsecond{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content{
+    width: 87%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .infous{
+    display: none;
+
+  }
+}
+@media only screen and (max-width: 480px){
+  .bodyindexsecond{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content{
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .infous{
+    display: none;
+
+  }
 }

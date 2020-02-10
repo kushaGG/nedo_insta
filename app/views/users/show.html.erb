@@ -3,7 +3,8 @@
     <div class="statshow">
 <%= image_tag(@user.avatar_url, class: "useravatar")%>
 <div class="nicknameandedit">
-<h2><%= @user.nickname %></h2>
+<h2><%= @user.nickname %></h2><h5 class="linkedit"><%= link_to "Edit profile", edit_user_registration_path, class: "link"%></h5>
+
 <% if @user != current_user %>
 <% if current_user.following?(@user) %>
     <%= render 'unfollow' %>
@@ -11,12 +12,13 @@
     <%= render 'follow' %>
   <% end %>
 <% else %>
-<h5 class="linkedit"><%= link_to "Edit profile", edit_user_registration_path, class: "link"%></h5>
 <% end %>
 </div>
+
 <%=  @user.photos.count %> publications
-<%= link_to @user.followed_users.count, following_user_path(@user.id) %> following
-<%= link_to @user.followers.count, followers_user_path(@user.id) %> followers
+<%= link_to @user.followed_users.count, following_user_path(@user.id), style: "color:black" %> following
+<%= link_to @user.followers.count, followers_user_path(@user.id), style: "color:black" %> followers
+
 </header>
 <hr class="hrshow"/>
 <div class="bodyphotoshow">

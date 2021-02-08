@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'devise'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
